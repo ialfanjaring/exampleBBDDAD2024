@@ -1,0 +1,20 @@
+package org.iesch.ad.exampleBBDD.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+
+@Data
+public class Perfil {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //AUTOINCREMENTAL DE MYSQL
+                                                        //EN ORACLE Y EN POSTGRES SE USA SECUENCE
+    private long id;
+
+    private String detalles;
+
+    @OneToOne
+    Persona persona;
+
+}
